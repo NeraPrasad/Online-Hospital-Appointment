@@ -1,0 +1,30 @@
+GridView1.DataSource = SqlDataSource1;
+            GridView1.DataBind();
+
+
+Button Click in GridView Coding
+
+
+if (e.CommandName == "sroll")
+            {
+                int crow;
+                crow=Convert.ToInt32(e.CommandArgument.ToString());
+                string v = GridView1.Rows[crow].Cells[0].Text;
+
+
+
+                Label1.Text = "Rollno of Selected Student is "+v;
+
+            }
+            if (e.CommandName == "sname")
+            {
+                int crow;
+                crow = Convert.ToInt32(e.CommandArgument.ToString());
+                string v = GridView1.Rows[crow].Cells[1].Text;
+
+
+
+                Label1.Text = "Name of Selected Student is " + v;
+
+            }
+

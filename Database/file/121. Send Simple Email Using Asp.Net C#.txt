@@ -1,0 +1,34 @@
+Important NameSpaces
+-----------------------
+using System.Net.Mail;
+using System.Net;
+
+------------------------
+
+Register Button Click Event
+-----------------------------
+
+        SmtpClient smtp = new SmtpClient();
+        smtp.Host = "smtp.gmail.com";
+        smtp.Port = 587;
+        smtp.Credentials = new System.Net.NetworkCredential("haritisyal@gmail.com", "Your Password Here");
+        smtp.EnableSsl = true;
+        MailMessage msg = new MailMessage();
+        msg.Subject = "Hello " + TextBox1.Text + "  Thanks for Register at Hariti Study Hub";
+        msg.Body = "Hi, Thanks For Your Registration at Hariti Study Hub, We will Provide You The Latest Update. Thanks";
+        string toaddress = TextBox2.Text;
+        msg.To.Add(toaddress);
+        string fromaddress = "Hariti Study Hub <HaritiSyal@gmail.com>";
+        msg.From = new MailAddress(fromaddress);
+        try
+        {
+            smtp.Send(msg);
+            Label3.Text = "Your Email Has Been Registered with Us";
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+
+        }
+        catch
+        {
+            throw;
+        }
