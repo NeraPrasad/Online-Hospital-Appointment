@@ -164,7 +164,7 @@ public partial class admin_CheckAppointment : System.Web.UI.Page
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("dharmaprecharanaya@gmail.com", "Dharmaya123");
+            smtp.Credentials = new System.Net.NetworkCredential("youremail@gmail.com", "userpassword");
             smtp.EnableSsl = true;
             MailMessage msg = new MailMessage();
             msg.Subject = "Hello " + PatientName + "  Thanks for Your Appointment. ";
